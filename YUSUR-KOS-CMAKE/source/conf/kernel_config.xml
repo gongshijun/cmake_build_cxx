@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+ <configuration>
+   <property>
+     <kernel>ts_sum</kernel>
+     <type>1</type>
+     <id>2</id>
+     <port_num>1</port_num>
+     <param_num>1</param_num>
+     <num>4</num>
+   </property>
+ </configuration>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+ <configuration>
+    <property>
+      <name>length</name>
+      <value>10000</value>
+    </property>
+    <property>
+      <name>address</name>
+      <value>100000</value>
+    </property>
+    <property>
+      <name>temperature</name>
+      <value>32</value>
+    </property>
+    <property>
+      <name>power</name>
+      <value>32</value>
+    </property>
+    <property>
+      <name>inputchannel.usgae</name>
+      <value>32</value>
+    </property>
+    <property>
+      <name>inputchannel.waitime</name>
+      <value>32</value>
+    </property>
+  </configuration>

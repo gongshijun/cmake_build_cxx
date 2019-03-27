@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+ <configuration>
+   <property>
+     <name>expression</name>
+     <value>A=ts_sum(open, 5);</value>
+   </property>
+   <property>
+     <name>open</name>
+     <row>10000</row>
+     <col>10000</col>
+   </property>
+ </configuration>

@@ -1,0 +1,4 @@
+option (KOS_DEBUG_ENABLE "Enable KOS Debug" ON)
+# option (KOS_LOG_ENABLE "Enable KOS log system" ON)
+option (UNIT_TEST_ENABLE "Enable KOS unit test" OFF)
+option (OBJECT_BUILD_ENABLE "Enable build from object" OFF)
