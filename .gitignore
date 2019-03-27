@@ -338,7 +338,7 @@ ASALocalRun/
 !.vscode/launch.json
 !.vscode/extensions.json
 
-YUSUR-KOS-CMAKE/build/
+*build/
 
 */.vscode/*
 !*/.vscode/settings.json
