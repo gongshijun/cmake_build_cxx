@@ -257,13 +257,15 @@ else ()
 
     if (UNIT_TEST_ENABLE)
         list (APPEND TARGET_OBJ $<TARGET_OBJECTS:utest_obj>)
+        add_executable (kos_utest  
+            ${TARGET_OBJ}
+        )
     else ()
         list (APPEND TARGET_OBJ $<TARGET_OBJECTS:main_obj>)
+        add_executable (kos_utest  
+            ${TARGET_OBJ} 
+        )
     endif ()
-
-    add_executable (kos_utest  
-        ${TARGET_OBJ} 
-    )
 # $<TARGET_OBJECTS:utest_obj> 
 # $<TARGET_OBJECTS:common_obj> 
 endif ()
