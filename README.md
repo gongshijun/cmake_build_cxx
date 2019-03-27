@@ -15,5 +15,23 @@
 
 主程序，使用源文件构建，效果如下图：  
 
-![main src] (./images/main_src.png)
+![main src](images/main_src.png)
 
+主程序，使用OBJ构建，效果如下图：
+
+![main src](images/main_obj.png)
+
+单元测试，使用OBJ构建，效果如下图：
+
+![main src](images/utest_obj.png)
+
+#### 接下来，介绍主要的CMakeList.txt 文件
+在采用OBJ方式构建的时候，不同目录下面的cmake文件是一样的，因此，我们只介绍两个cmake文件。一个主cmake文件，和一个目录cmake文件。同时，在采用源文件构建时，目录cmake是不起作用的。  
+
+[主cmake文件详解](doc/main_cmake.md)  
+[目录下cmake文件详解](doc/dir_cmake.md)
+
+此外，`option.txt`对应的`kos_conf.in.h`对应的文件，我们放在根目录的conf目录下面，build之后对应的`kos_conf.h`则放在相应的build目录下面的`conf`文件夹中。
+
+##### 申明
+本项目使用了开源库**catch2**单元测试，**easylogging++**日志系统，以及**tinyxml2**xml解析工具。特此申明，感谢开源者，都是很好用的开源库，只需要添加对应的头文件或者源文件到工程中就可以了。
