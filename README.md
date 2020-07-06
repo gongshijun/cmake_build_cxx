@@ -1,37 +1,24 @@
-# cmake_build_cxx
-这个项目，主要记录本人这四天来学习cmake构建系统的经历
-### using cmake build a big project. The project contain nultilevel directory and resource files. This project contain two ways to build project. One, build all project from sources. Two, build all project from objects. if there is any mistake, please give me your advice.  
+<!--
+ * @Description: Copyright(c) All rights reserved.
+ * @Author: Shijun Gong
+ * @Date: 2020-06-21 07:39:53
+ * @LastEditors: Shijun Gong
+ * @LastEditTime: 2020-06-21 07:51:29
+--> 
+# CMAKE BUILD CXX
+CMake是管理C ++系统构建的好​​工具。它构建迅速，支持主要用例，并且非常灵活。问题是，它太灵活了，对于习惯于自己编写Makefile的人们来说，并不总是很明显应该使用什么CMake命令和属性。如果习惯于仅将一些编译器标志放入CXX_FLAGS环境变量中，即使它支持更好的管理构建方式，您也可能会在CMake中这样做。
 
-#### 项目需求：
-一个大型工程，工程需要包括多级目录结构，需要有主程序以及单元测试，以及一些资源文件用来进行项目配置。除此之外，单元测试和主程序之间，构成可选项。也就是说，要么进行单元测试，要么运行主程序。 另外，处于个人爱好，比较喜欢在vs中开发代码，因此需要在vs显示的构建虚拟工程目录。  
-#### 需要说明的一点：
-由于大型工程，不同目录之间存在相互引用，以及引用顺序不方便确认的情况，因此，本工程提供了两种构建方式。第一，源文件构建，将所有源文件，放在一起进行构建，这样可以方便在vs一个工程中，进行查看与调试。第二， 目标文件构建，先将不同目录下的源文件，生成对应的目标文件，再进行构建。
+本项目记录本人学习CMAKE的一些经验，目前总共分配两个工程：
 
-#### 项目效果如下图
-配置： 可以通过设置下面两个参数来选择，是构建单元测试，还是主程序，以及采用object方式，还是源程序。  
-配置选项，在根目录`option.txt`文件中  
-`option (UNIT_TEST_ENABLE "Enable KOS unit test" OFF)`  
-`option (OBJECT_BUILD_ENABLE "Enable build from object" OFF)`  
+```cmake_makefile``` 类似于Makefile文件编写式风格，导致自己的项目很难移植，也不方便在不同的上下文中重用，但是限于本人一开始喜欢在vs中开发调试代码，因此该项目可能非常适合开发初期且喜欢用vs调试的开发人员。
 
-主程序，使用源文件构建，效果如下图：  
+```cmake_target``` 再经过一段时间学习之后，特别是看了大公司的开源代码，感觉之前的项目是在存在很多缺陷，如不支持自动安装库（需要手动拷贝头文件），以及不支持```find_package```等现代cmake式的命令（影响库移植）等等。因此，该项目将记录如何基于cmake的target来编程实现build cxx系统来方便的完成开发等。
 
-![main src](images/main_src.png)
+主要参考：
 
-主程序，使用OBJ构建，效果如下图：
+https://rix0r.nl/blog/2015/08/13/cmake-guide/
 
-![main src](images/main_obj.png)
+https://cliutils.gitlab.io/modern-cmake/
 
-单元测试，使用OBJ构建，效果如下图：
-
-![main src](images/utest_obj.png)
-
-#### 接下来，介绍主要的CMakeList.txt 文件
-在采用OBJ方式构建的时候，不同目录下面的cmake文件是一样的，因此，我们只介绍两个cmake文件。一个主cmake文件，和一个目录cmake文件。同时，在采用源文件构建时，目录cmake是不起作用的。  
-
-[主cmake文件详解](doc/main_cmake.md)  
-[目录下cmake文件详解](doc/dir_cmake.md)
-
-此外，`option.txt`对应的`kos_conf.in.h`对应的文件，我们放在根目录的conf目录下面，build之后对应的`kos_conf.h`则放在相应的build目录下面的`conf`文件夹中。
-
-##### 申明
-本项目使用了开源库**catch2**单元测试，**easylogging++**日志系统，以及**tinyxml2**xml解析工具。特此申明，感谢开源者，都是很好用的开源库，只需要添加对应的头文件或者源文件到工程中就可以了。
+# 详细介绍
+在每个项目项目下面，都有详细的文档介绍，可以自行参考。

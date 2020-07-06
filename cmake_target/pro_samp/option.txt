@@ -1,0 +1,5 @@
+option (PRO_DEBUG_ENABLE "Enable KOS Debug" ON)
+
+### git submodule
+## add git submodule: git submodule add repo.git extern/repo
+option (GIT_SUBMODULE "Chech submodules during build" ON)
